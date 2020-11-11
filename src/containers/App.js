@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import CardList from '../components/CardList';
+import ErrorBoundry from '../components/ErrorBoundry';
 import SearchBox from '../components/SearchBox';
 
 
@@ -47,8 +48,9 @@ class App extends Component {
                     <SearchBox searchCange={this.onSearchRobots} />
                 </header>
                 <div className='tc'>
-                <CardList robots = {filterdRobots}/>
-
+                <ErrorBoundry>    
+                    <CardList robots = {filterdRobots}/>
+                </ErrorBoundry>
                 </div>
                
             </>
